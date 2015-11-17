@@ -2,9 +2,9 @@
 title: Blog of BlkArt
 header-img: "img/facebook.jpg"
 tagline: "cn"  
-description: "blkart|上善若水·天道酬勤"  
+description: "上善若水·天道酬勤"  
 baseurl: ""
-url: "http://cnfeat"  
+url: "http://blkart"  
 
 # About/contact
 owner: 
@@ -17,7 +17,7 @@ gavatar: http://dreamofbook.qiniudn.com/Az..png
 favicon: img/favicon.png
 
 github_username: blkart
-facebook_username: 
+#facebook_username: 
 zhihu_username: blkart
 
 # Build settings  
