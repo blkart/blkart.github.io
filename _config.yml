@@ -1,27 +1,24 @@
 # Site settings
-title: 读立写生
+title: 上善若水·天道酬勤
 header-img: "img/facebook.jpg"
 tagline: "cn"  
-description: "陈素封|读而立·写而生"  
+description: "blkart|上善若水·天道酬勤"  
 baseurl: ""
 url: "http://cnfeat"  
 
 # About/contact
 owner: 
-  name: " CnFeat"
-  email: CnFeat@gmail.com
-  bio: "写就是写的报酬"
+  name: " BlkArt"
+  email: blkart.org@gmail.com
+  bio: "行走·记录·沉淀·悟道"
 
 # Data
 gavatar: http://dreamofbook.qiniudn.com/Az..png
 favicon: img/favicon.png
 
-douban_username:  cnfeat
-twitter_username: feat
-github_username: cnfeat
+github_username: blkart
 facebook_username: 
-weibo_username: cnfeat 
-zhihu_username: feat
+zhihu_username: blkart
 
 # Build settings  
 # use Github Flavored Markdown !important  
@@ -51,9 +48,9 @@ defaults:
 comments :
   provider : duoshuo
   duoshuo :
-    short_name : cnfeat
+    short_name : blkart
   disqus :
-      short_name : cnfeat
+      short_name : blkart
 
 # Analytics and webmaster tools stuff goes here
 google_analytics: 
