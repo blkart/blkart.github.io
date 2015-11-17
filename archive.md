@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Archive"
-description: "行走·记录·沉淀·悟道"
+description: "上善若水·天道酬勤"
 header-img: "img/orange.jpg"
 ---
 
