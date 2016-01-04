@@ -29,7 +29,6 @@ description: Docker 安装及基本使用方法
 
 ```
 # docker login
-
 Username: ******
 Password:
 Email: *******@***.com
