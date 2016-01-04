@@ -93,10 +93,10 @@ description: Docker 安装及基本使用方法
 
 ### 守护进程式运行容器
 
-*   -d：告诉docker以后台模式运行容器
-
     # docker run -d centos:latest /bin/sh -c "while true; do echo hello world; sleep 1; done"
     046651b6dd00bf3c497bc47a1c7b365d79672bace262982f0e8a4cd3afd99560 
+
+*   -d：告诉docker以后台模式运行容器
 
 ### 查看docker进程
 
@@ -106,7 +106,7 @@ description: Docker 安装及基本使用方法
 
 ### 停止docker进程
 
-*   此处“ecstatic_sammet”为容器名
+> 此处“ecstatic_sammet”为容器名
 
     # docker stop ecstatic_sammet
 
