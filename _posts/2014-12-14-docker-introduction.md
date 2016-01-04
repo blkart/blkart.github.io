@@ -38,7 +38,7 @@ Docker可以帮助系统管理员在任何基础设施上快速可靠的运行�
 
 ### Docker
 
-![003.png](https://github.com/blkart/blkart.github.io/blob/master/img/blog_img/003.png)
+![003.png](/img/blog_img/003.png)
 
 Docker Engine容器仅包含应用程序和它的依赖。它在主机操作系统中的用户空间中作为一个独立的进程运行，与其他容器共享内核。因此，它具有与虚拟机一样的资源隔离与分配的优点，而且更便携和高效。
 
