@@ -125,8 +125,6 @@ description: Docker 安装及基本使用方法
 
 ### 运行一个web应用
 
-*   -P：通知Docker所需的网络端口映射从主机映射到容器内
-
     # docker run -d -P training/webapp python app.py
     Unable to find image 'training/webapp' locally
     Pulling repository training/webapp
@@ -146,14 +144,17 @@ description: Docker 安装及基本使用方法
     Status: Downloaded newer image for training/webapp:latest
     f808ab5984ee4cf5788217b5091bf30bc7ded05ef71dd1827612641a287c4138 
 
-### 查看web应用容器
+* -P：通知Docker所需的网络端口映射从主机映射到容器内
 
-*   -l：返回最后的容器的状态
-*   此时可以看到主机的49153号端口映射到容器的5000端口
+### 查看web应用容器
 
     # docker ps -l
     CONTAINER ID        IMAGE                    COMMAND             CREATED             STATUS              PORTS                     NAMES
     f808ab5984ee        training/webapp:latest   "python app.py"     6 minutes ago       Up 6 minutes        0.0.0.0:49153-&gt;5000/tcp   cocky_thompson 
+
+*   -l：返回最后的容器的状态
+
+> 此时可以看到主机的49153号端口映射到容器的5000端口
 
 ### 访问主机的49153端口即可访问容器中5000端口对应的服务
 
@@ -167,14 +168,14 @@ description: Docker 安装及基本使用方法
 
 ### 查看web应用的日志
 
-*   -f：使用tail -f来查看容器标准输出
-
     # docker logs -f cocky_thompson
     * Running on http://0.0.0.0:5000/
     192.168.3.115 - - [23/Nov/2014 06:48:51] "GET / HTTP/1.1" 200 -
     192.168.3.115 - - [23/Nov/2014 06:48:51] "GET /favicon.ico HTTP/1.1" 404 -
     192.168.3.115 - - [23/Nov/2014 06:48:51] "GET /favicon.ico HTTP/1.1" 404 -
     192.168.3.115 - - [23/Nov/2014 06:50:02] "GET / HTTP/1.1" 200 - 
+
+* -f：使用tail -f来查看容器标准输出
 
 ### 查看容器的进程
 
@@ -288,37 +289,37 @@ description: Docker 安装及基本使用方法
 
 ### 获取容器的某一个配置信息
 
-*   -f：使用给定的模板格式显示输出信息
-
     # docker inspect -f '{{ .NetworkSettings.IPAddress }}' cocky_thompson
     172.17.0.15 
 
+* -f：使用给定的模板格式显示输出信息
+
 ### 停止容器
 
-*   查看正在运行的容器
+#### 查看正在运行的容器
 
     # docker ps
     CONTAINER ID        IMAGE                    COMMAND             CREATED             STATUS              PORTS                     NAMES
     f808ab5984ee        training/webapp:latest   "python app.py"     33 minutes ago      Up 33 minutes       0.0.0.0:49153-&gt;5000/tcp   cocky_thompson 
 
-*   停止某个容器
+#### 停止某个容器
 
     # docker stop cocky_thompson
     cocky_thompson 
 
-*   再次查看正在运行的容器
+#### 再次查看正在运行的容器
 
     #docker ps
     CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES 
 
-### 启动某个容器
+#### 启动某个容器
 
     # docker start cocky_thompson
     cocky_thompson 
 
-### 删除容器
+#### 删除容器
 
-*   删除前需要先停止容器运行
+> 删除前需要先停止容器运行
 
     # docker rm cocky_thompson
     cocky_thompson 
