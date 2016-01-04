@@ -32,7 +32,7 @@ Docker可以帮助系统管理员在任何基础设施上快速可靠的运行�
 
 ### 虚拟机
 
-![002.png](https://github.com/blkart/blkart.github.io/blob/master/img/blog_img/002.png)
+![002.png](/img/blog_img/002.png)
 
 每一个虚拟机不仅仅包含应用程序（这也许只是MB级）和必要的二进制文件和库，而是整个操作系统（这可能是GB级的）
 
