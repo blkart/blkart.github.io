@@ -20,8 +20,11 @@ description: Docker 安装及基本使用方法
 
 ### 启动服务/设置服务随系统启动
 
-```# systemctl start docker
-# systemctl enable docker```
+```
+# systemctl start docker
+
+# systemctl enable docker
+```
 
 ## 使用
 
@@ -37,7 +40,6 @@ Account created. Please use the confirmation link we sent to your e-mail to acti
 
 ```
 # docker login
-
 Username (*****):
 Login Succeeded
 ```
