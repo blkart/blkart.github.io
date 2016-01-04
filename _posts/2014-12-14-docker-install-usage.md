@@ -27,30 +27,35 @@ description: Docker 安装及基本使用方法
 
 ### 注册帐号/登陆
 
-```# docker login
+```
+# docker login
 
 Username: ******
 Password:
 Email: *******@***.com
-Account created. Please use the confirmation link we sent to your e-mail to activate it.```
-```# docker login
+Account created. Please use the confirmation link we sent to your e-mail to activate it.
+```
+
+```
+# docker login
 
 Username (*****):
-Login Succeeded```
+Login Succeeded
+```
 
 ### 查看可用images
 
 *   初始环境本地无任何image
-```# docker images
-
+```
+# docker images
 REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE 
 ```
 
 ### pull image到本地
 
 *   以centos为例
-```# docker pull centos
-
+```
+# docker pull centos
 centos:latest: The image you are pulling has been verified
 
 511136ea3c5a: Pulling fs layer
@@ -62,8 +67,8 @@ Status: Downloaded newer image for centos:latest
 
 ### 查看可用images
 
-```# docker images
-
+```
+# docker images
 REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
 centos              centos7             ae0c2d0bdc10        2 weeks ago         224 MB
 centos              latest              ae0c2d0bdc10        2 weeks ago         224 MB 
@@ -72,16 +77,20 @@ centos              latest              ae0c2d0bdc10        2 weeks ago         
 ### 在docker中运行程序
 
 *   SELinux为Enforcing时会由于权限问题导致容器启动失败
-```# docker run centos:latest /bin/echo 'Hello world'
-
+```
+# docker run centos:latest /bin/echo 'Hello world'
 permission denied2014/11/23 11:29:05 Error response from daemon: Cannot start container e070fb72d5f29154e02c051d7ea9313c2110547b7702c1cfcb016042081d2934: permission denied 
 ```
 
 *   此时将SELinux设为permissive状态即可
-```# setenforce 0```
+
+```
+# setenforce 0
+```
 
 *   再次运行容器，权限问题解决
-```# sudo docker run centos:latest /bin/echo 'Hello world'
+```
+# sudo docker run centos:latest /bin/echo 'Hello world'
 
 Hello world 
 ```
@@ -90,8 +99,9 @@ Hello world
 
 *   -t：在新容器内指定一个伪终端或终端
 *   -i：允许我们对容器内的STDIN进行交互
-```# docker run -t -i centos:latest /bin/bash
 
+```
+# docker run -t -i centos:latest /bin/bash
 [root@7377b556e8d5 /]#
 [root@7377b556e8d5 /]# ls
 bin  dev  etc  home  lib  lib64  lost+found  media  mnt  opt  proc  root  run  sbin  selinux  srv  sys  tmp  usr  var 
@@ -100,15 +110,16 @@ bin  dev  etc  home  lib  lib64  lost+found  media  mnt  opt  proc  root  run  s
 ### 守护进程式运行容器
 
 *   -d：告诉docker以后台模式运行容器
-```# docker run -d centos:latest /bin/sh -c "while true; do echo hello world; sleep 1; done"
 
+```
+# docker run -d centos:latest /bin/sh -c "while true; do echo hello world; sleep 1; done"
 046651b6dd00bf3c497bc47a1c7b365d79672bace262982f0e8a4cd3afd99560 
 ```
 
 ### 查看docker进程
 
-```# docker ps
-
+```
+# docker ps
 CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS              PORTS               NAMES
 046651b6dd00        centos:centos7      "/bin/sh -c 'while t   2 minutes ago       Up 2 minutes                            ecstatic_sammet      
 ```
@@ -116,12 +127,14 @@ CONTAINER ID        IMAGE               COMMAND                CREATED          
 ### 停止docker进程
 
 *   此处“ecstatic_sammet”为容器名
-```# docker stop ecstatic_sammet```
+```
+# docker stop ecstatic_sammet
+```
 
 ### 查看docker版本
 
-```# docker version
-
+```
+# docker version
 Client version: 1.3.1
 Client API version: 1.15
 Go version (client): go1.3.3
@@ -136,8 +149,8 @@ Git commit (server): 4e9bbfa/1.3.1
 ### 运行一个web应用
 
 *   -P：通知Docker所需的网络端口映射从主机映射到容器内
-```# docker run -d -P training/webapp python app.py
-
+```
+# docker run -d -P training/webapp python app.py
 Unable to find image 'training/webapp' locally
 Pulling repository training/webapp
 31fa814ba25a: Download complete
@@ -161,31 +174,32 @@ f808ab5984ee4cf5788217b5091bf30bc7ded05ef71dd1827612641a287c4138
 
 *   -l：返回最后的容器的状态
 *   此时可以看到主机的49153号端口映射到容器的5000端口
-```# docker ps -l
 
+```
+# docker ps -l
 CONTAINER ID        IMAGE                    COMMAND             CREATED             STATUS              PORTS                     NAMES
 f808ab5984ee        training/webapp:latest   "python app.py"     6 minutes ago       Up 6 minutes        0.0.0.0:49153-&gt;5000/tcp   cocky_thompson 
 ```
 
 ### 访问主机的49153端口即可访问容器中5000端口对应的服务
 
-```# curl http://192.168.3.115:49153
-
+```
+# curl http://192.168.3.115:49153
 Hello world! 
 ```
 
 ### 另外一种查看端口映射的方法
 
-```# docker port cocky_thompson 5000
-
+```
+# docker port cocky_thompson 5000
 0.0.0.0:49153 
 ```
 
 ### 查看web应用的日志
 
 *   -f：使用tail -f来查看容器标准输出
-```# docker logs -f cocky_thompson
-
+```
+# docker logs -f cocky_thompson
 * Running on http://0.0.0.0:5000/
 192.168.3.115 - - [23/Nov/2014 06:48:51] "GET / HTTP/1.1" 200 -
 192.168.3.115 - - [23/Nov/2014 06:48:51] "GET /favicon.ico HTTP/1.1" 404 -
@@ -195,16 +209,16 @@ Hello world!
 
 ### 查看容器的进程
 
-```# docker top cocky_thompson
-
+```
+# docker top cocky_thompson
 UID                 PID                 PPID                C                   STIME               TTY                 TIME                CMD
 root                13083               4174                0                   14:39               ?                   00:00:00            python app.py 
 ```
 
 ### 查看docker的底层信息
 
-```# docker inspect cocky_thompson
-
+```
+# docker inspect cocky_thompson
     [{
         "Args": [
             "app.py"
@@ -310,44 +324,44 @@ root                13083               4174                0                   
 ### 获取容器的某一个配置信息
 
 *   -f：使用给定的模板格式显示输出信息
-```# docker inspect -f '{{ .NetworkSettings.IPAddress }}' cocky_thompson
-
+```
+# docker inspect -f '{{ .NetworkSettings.IPAddress }}' cocky_thompson
 172.17.0.15 
 ```
 
 ### 停止容器
 
 *   查看正在运行的容器
-```# docker ps
-
+```
+# docker ps
 CONTAINER ID        IMAGE                    COMMAND             CREATED             STATUS              PORTS                     NAMES
 f808ab5984ee        training/webapp:latest   "python app.py"     33 minutes ago      Up 33 minutes       0.0.0.0:49153-&gt;5000/tcp   cocky_thompson 
 ```
 
 *   停止某个容器
-```# docker stop cocky_thompson
-
+```
+# docker stop cocky_thompson
 cocky_thompson 
 ```
 
 *   再次查看正在运行的容器
-```#docker ps
-
+```
+#docker ps
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES 
 ```
 
 ### 启动某个容器
 
-```# docker start cocky_thompson
-
+```
+# docker start cocky_thompson
 cocky_thompson 
 ```
 
 ### 删除容器
 
 *   删除前需要先停止容器运行
-```# docker rm cocky_thompson
-
+```
+# docker rm cocky_thompson
 cocky_thompson 
 ```
 
@@ -357,7 +371,8 @@ cocky_thompson
 
 #### 简单总结下前面用到的命令：
 
-```# docker --help
+```
+# docker --help
 Usage: docker [OPTIONS] COMMAND [arg...]
 
     images    列出镜像
