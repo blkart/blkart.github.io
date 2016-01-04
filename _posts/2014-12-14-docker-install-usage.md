@@ -39,14 +39,14 @@ description: Docker 安装及基本使用方法
 
 ### 查看可用images
 
-*   初始环境本地无任何image
+#### 初始环境本地无任何image
 
     # docker images
     REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE 
 
 ### pull image到本地
 
-*   以centos为例
+#### 以centos为例
 
     # docker pull centos
     centos:latest: The image you are pulling has been verified
@@ -66,16 +66,16 @@ description: Docker 安装及基本使用方法
 
 ### 在docker中运行程序
 
-*   SELinux为Enforcing时会由于权限问题导致容器启动失败
+#### SELinux为Enforcing时会由于权限问题导致容器启动失败
 
     # docker run centos:latest /bin/echo 'Hello world'
     permission denied2014/11/23 11:29:05 Error response from daemon: Cannot start container e070fb72d5f29154e02c051d7ea9313c2110547b7702c1cfcb016042081d2934: permission denied 
 
-*   此时将SELinux设为permissive状态即可
+#### 此时将SELinux设为permissive状态即可
 
     # setenforce 0
 
-*   再次运行容器，权限问题解决
+#### 再次运行容器，权限问题解决
 
     # sudo docker run centos:latest /bin/echo 'Hello world'
     
