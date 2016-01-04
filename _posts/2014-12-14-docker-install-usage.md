@@ -83,13 +83,13 @@ description: Docker 安装及基本使用方法
 
 ### 运行一个交互式的容器
 
-*   -t：在新容器内指定一个伪终端或终端
-*   -i：允许我们对容器内的STDIN进行交互
-
     # docker run -t -i centos:latest /bin/bash
     [root@7377b556e8d5 /]#
     [root@7377b556e8d5 /]# ls
     bin  dev  etc  home  lib  lib64  lost+found  media  mnt  opt  proc  root  run  sbin  selinux  srv  sys  tmp  usr  var 
+
+*   -t：在新容器内指定一个伪终端或终端
+*   -i：允许我们对容器内的STDIN进行交互
 
 ### 守护进程式运行容器
 
