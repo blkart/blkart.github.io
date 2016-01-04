@@ -16,9 +16,7 @@ description: Docker 安装及基本使用方法
 
 ### 安装软件包
 
-```
-# yum -y install docker-io
-```
+    # yum -y install docker-io
 
 ### 启动服务/设置服务随系统启动
 
