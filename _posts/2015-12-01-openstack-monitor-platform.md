@@ -110,7 +110,7 @@ OpenStack 发展至今，已经走过了5年多的风风雨雨，随着时间的
 
 # 相关项目链接
 
-* Collectd：https://github.com/collectd/collectd
-* Heka：https://github.com/mozilla-services/heka/
-* Influxdb：https://github.com/influxdb/influxdb
-* Grafana：https://github.com/grafana/grafana
+* [Collectd](https://github.com/collectd/collectd)
+* [Heka](https://github.com/mozilla-services/heka/)
+* [Influxdb](https://github.com/influxdb/influxdb)
+* [Grafana](https://github.com/grafana/grafana)
