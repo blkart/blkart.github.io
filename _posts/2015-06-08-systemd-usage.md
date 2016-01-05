@@ -14,7 +14,7 @@ systemctl可以管理远端服务器上的服务
     -H --host=[USER@]HOST
                       Show information for remote host
 
-    示例：
+示例：
 
     # systemctl -H node-4 status ntpd
     Warning: Permanently added 'node-4' (ECDSA) to the list of known hosts.
