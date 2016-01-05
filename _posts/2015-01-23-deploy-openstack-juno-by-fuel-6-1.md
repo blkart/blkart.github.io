@@ -3,7 +3,7 @@ layout: post
 title: Fuel6部署OpenStack juno（on CentOS6.5）测试笔记『1』
 date: 2015-01-23
 categories: blog
-tags: [openstack][fuel]
+tags: [openstack]
 description: Fuel6部署OpenStack juno（on CentOS6.5）测试笔记
 
 ---
