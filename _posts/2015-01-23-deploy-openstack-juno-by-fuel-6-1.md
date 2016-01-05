@@ -149,17 +149,17 @@ description: Fuel6部署OpenStack juno（on CentOS6.5）测试笔记
 
   ![选区_020](/img/blog_img/020.png)
 
-*【Network Setup】修改IP地址为“10.10.0.2”，修改网关为“10.10.0.1”，并选择“Apply”，按回车应用新配置。
+* 【Network Setup】修改IP地址为“10.10.0.2”，修改网关为“10.10.0.1”，并选择“Apply”，按回车应用新配置。
 
   ![选区_021](/img/blog_img/021.png)
 
-*【PXE Setup】如无特殊需求，使用默认配置即可。
+* 【PXE Setup】如无特殊需求，使用默认配置即可。
 
-*【DNS&amp;Hostname】可设置主机名/DNS，根据需求进行配置，如下图所示：
+* 【DNS&amp;Hostname】可设置主机名/DNS，根据需求进行配置，如下图所示：
 
   ![选区_022](/img/blog_img/022.png)
 
-*【Time Sync】NTP服务相关配置，默认配置中指定了三个公网中的NTP服务器，如果Fuel主机可以连接到公网中的NTP服务器，使用默认配置即可；如无法连接到公网中的NTP服务器，需要将服务器指向“127.127.1.0”，如下图所示：
+* 【Time Sync】NTP服务相关配置，默认配置中指定了三个公网中的NTP服务器，如果Fuel主机可以连接到公网中的NTP服务器，使用默认配置即可；如无法连接到公网中的NTP服务器，需要将服务器指向“127.127.1.0”，如下图所示：
 
   ![选区_023](/img/blog_img/023.png)
 
@@ -171,13 +171,13 @@ description: Fuel6部署OpenStack juno（on CentOS6.5）测试笔记
 >
 > 当NTP服务器将上游时间服务器指向“127.127.1.0”时，表示使用本地时钟作为上级时间源。
 
-*【Root Password】设置Fuel系统的root用户密码，默认root密码为“r00tme”，可根据需求在此处修改root用户密码。
+* 【Root Password】设置Fuel系统的root用户密码，默认root密码为“r00tme”，可根据需求在此处修改root用户密码。
 
-*【Fuel User】此处可设置Fuel WEB管理门户admin用户的密码，默认admin用户密码为“admin”，可根据需求在此处修改admin用户密码。
+* 【Fuel User】此处可设置Fuel WEB管理门户admin用户的密码，默认admin用户密码为“admin”，可根据需求在此处修改admin用户密码。
 
-*【Shell Login】可获得一个Shell
+* 【Shell Login】可获得一个Shell
 
-*【Quit Setup】保存配置并退出，如图所示：
+* 【Quit Setup】保存配置并退出，如图所示：
 
   ![选区_024](/img/blog_img/024.png)
 
