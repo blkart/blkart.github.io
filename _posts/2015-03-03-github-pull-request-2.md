@@ -59,7 +59,7 @@ description: pull request方式向GitHub上的项目贡献代码
     # git commit -s
     # git push
 
-### 访问GitHub上自己帐号的代码仓库，创建pull request，将修改提交到上游
+#### 访问GitHub上自己帐号的代码仓库，创建pull request，将修改提交到上游
 
 > **注意**
 >
