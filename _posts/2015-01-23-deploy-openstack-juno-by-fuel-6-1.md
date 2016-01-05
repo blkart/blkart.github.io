@@ -339,20 +339,24 @@ OK，到此使用Fuel部署OpenStack环境已经完成。
 
 **『注 1』：** **KVM嵌套虚拟化**配置方法
 
-*   确认系统当前是否配置了KVM嵌套虚拟化，如返回值为“Y”，表示已配置KVM嵌套虚拟化，不需要后续操作；如返回值为“N”，则需要按以下描述进行配置。
+* 确认系统当前是否配置了KVM嵌套虚拟化，如返回值为“Y”，表示已配置KVM嵌套虚拟化，不需要后续操作；如返回值为“N”，则需要按以下描述进行配置。
 
     # cat /sys/module/kvm_intel/parameters/nested
-    `</pre>
-*   卸载内核模块
-    <pre>`# modprobe -r kvm-intel
-    `</pre>
-*   重新加载内核模块，同时将“nested”参数设置为“1”
-    <pre>`# modprobe kvm-intel nested=1
-    `</pre>
-*   确认配置是否成功，如返回值为“Y”，表示配置成功
-    <pre>`# cat /sys/module/kvm_intel/parameters/nested
-    `</pre>
-*   以上配置方法在系统重启后会丢失，如需使配置永久生效，需作如下操作
-    <pre>`# echo "options kvm-intel nested=1" &gt; /etc/modprobe.d/kvm-intel.conf
+
+* 卸载内核模块
+
+    # modprobe -r kvm-intel
+
+* 重新加载内核模块，同时将“nested”参数设置为“1”
+
+    # modprobe kvm-intel nested=1
+
+* 确认配置是否成功，如返回值为“Y”，表示配置成功
+
+    # cat /sys/module/kvm_intel/parameters/nested
+
+* 以上配置方法在系统重启后会丢失，如需使配置永久生效，需作如下操作
+
+    # echo "options kvm-intel nested=1" >> /etc/modprobe.d/kvm-intel.conf
 
 * * *
