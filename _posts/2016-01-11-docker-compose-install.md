@@ -32,14 +32,11 @@ PS: 继续翻译安装篇，[原文链接](https://docs.docker.com/compose/insta
 
 #### 执行以下命令下载 Compose 到本地
 
-```
-curl -L https://github.com/docker/compose/releases/download/1.5.2/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
-```
+    curl -L https://github.com/docker/compose/releases/download/1.5.2/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+
 #### 为文件增加可执行权限
 
-```
-chmod +x /usr/local/bin/docker-compose
-```
+    chmod +x /usr/local/bin/docker-compose
 
 > 注意：
 >
@@ -58,9 +55,7 @@ chmod +x /usr/local/bin/docker-compose
 
 你可以使用 pip 从 pypi 安装 Compose。如果你使用 pip 安装 Compose，强烈建议使用虚拟环境（[virtualenv](https://virtualenv.pypa.io/en/latest/)），因为很多操作系统的 python 系统包与 docker-compose 的依赖关系冲突。虚拟环境（virtualenv）[教程](http://docs.python-guide.org/en/latest/dev/virtualenvs/)。
 
-```
-$ pip install docker-compose
-```
+    $ pip install docker-compose
 
 > 注意：pip 需要 6.0 或以上版本
 
@@ -81,28 +76,20 @@ Compose 也可以运行在一个容器中，通过一个小的 bash 脚本包装
 
 如果 Compose 检测到没有标签的容器，在你结束它们前 Compose 将拒绝运行。如果你想要继续使用已经存在的容器（例如：它们包含你想保留的数据卷），你可以使用以下命令迁移它们。
 
-```
-$ docker-compose migrate-to-labels
-```
+    $ docker-compose migrate-to-labels
 
 另外，如果你不需要保留它们，你可以删除它们。Compose 将会创建一个新的。
 
-```
-$ docker rm -f -v myapp_web_1 myapp_db_1 ...
-```
+    $ docker rm -f -v myapp_web_1 myapp_db_1 ...
 
 ## 卸载
 
 如果你使用```curl```安装，可以用以下命令卸载：
 
-```
-$ rm /usr/local/bin/docker-compose
-```
+    $ rm /usr/local/bin/docker-compose
 
 如果你使用```pip```安装，可以用以下命令卸载：
 
-```
-$ pip uninstall docker-compose
-```
+    $ pip uninstall docker-compose
 
 
