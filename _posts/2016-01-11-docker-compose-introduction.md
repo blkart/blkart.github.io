@@ -8,7 +8,7 @@ description: Docker Compose 简介
 
 ---
 
-PS: 时间飞逝，距离上次写关于 Docker 的 Blog 已经有一年了，在这一年的时间里，Docker 发展飞速，很多地方由于版本的升级跟以前的使用方法也有了区别，在这里再来一篇最新的 Docker 快速入门指南，希望能帮助目前不了解 Docker 但又想快速了解并掌握 Docker 的基本使用方法的朋友提供些许帮助。
+PS: 翻译篇官网简介，[原文链接](https://docs.docker.com/compose/)
 
 ## 简介
 
@@ -24,19 +24,16 @@ Compose 是一个用来定义和运行包含多个容器（multi-comtainer）的
 
 ## docker-compose.yml 文件示例
 
-```
-
-web:
-  build: .
-  ports:
-   - "5000:5000"
-  volumes:
-   - .:/code
-  links:
-   - redis
-redis:
-  image: redis
-```
+    web:
+      build: .
+      ports:
+       - "5000:5000"
+      volumes:
+       - .:/code
+      links:
+       - redis
+    redis:
+      image: redis
 
 > 想了解更多关于 Compose 文件的信息，可以查看[Compose 文件参考](https://docs.docker.com/compose/compose-file/)
 
