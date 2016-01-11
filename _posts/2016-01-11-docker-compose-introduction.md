@@ -3,7 +3,7 @@ layout: post
 title: Docker Compose 简介
 date: 2016-01-11
 categories: blog
-tags: [Docker]
+tags: [Docker,翻译]
 description: Docker Compose 简介
 
 ---
