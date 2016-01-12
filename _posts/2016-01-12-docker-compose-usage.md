@@ -141,7 +141,7 @@ PS: 继续翻译使用篇，[原文链接](https://docs.docker.com/compose/getti
 
 ## 步骤5：尝试下其他命令
 
-如果哦你想在后端运行你的服务，你可以传递 ```-d``` （detached）给 ```docker-compose up``` 命令，可以使用 ```docker-compose ps``` 查看当前正在运行的服务。
+如果你想在后端运行你的服务，你可以传递 ```-d``` （detached）给 ```docker-compose up``` 命令，可以使用 ```docker-compose ps``` 查看当前正在运行的服务。
 
     $ docker-compose up -d
     Starting composetest_redis_1...
