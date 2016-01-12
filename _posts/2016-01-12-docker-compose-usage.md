@@ -125,7 +125,7 @@ PS: 继续翻译使用篇，[原文链接](https://docs.docker.com/compose/getti
     web_1   |  * Running on http://0.0.0.0:5000/
     web_1   |  * Restarting with stat
 
-Compose 下载一个 Redis 镜像，为你的代码构建一个镜像，并且启动你定义的服务。
+> Compose 下载一个 Redis 镜像，为你的代码构建一个镜像，并且启动你定义的服务。
 
 #### 在浏览器中输入 ```http://0.0.0.0:5000/``` 查看应用是否正在运行。
 
