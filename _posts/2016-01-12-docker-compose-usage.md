@@ -64,10 +64,15 @@ PS: 继续翻译使用篇，[原文链接](https://docs.docker.com/compose/getti
     CMD python app.py
 
 > 这个文件告诉 Docker 做以下几件事：
+>
 > * 先构建一个包含了 Python 2.7 的镜像。
+>
 > * 然后添加当前目录```.```到镜像中的```/code```路径下。
+>
 > * 切换工作目录到```/code```。
+>
 > * 安装 Python 的依赖。
+>
 > * 设置容器（container）的默认命令为```python app.py```
 
 > 想要了解更多关于如何书写 Dockerfiles 的信息，可以查看[Docker 用户指南](https://docs.docker.com/engine/userguide/dockerimages/#building-an-image-from-a-dockerfile)和[Dockerfile 参考](https://docs.docker.com/engine/reference/builder/)。 
@@ -96,9 +101,13 @@ PS: 继续翻译使用篇，[原文链接](https://docs.docker.com/compose/getti
       image: redis
 
 > 这个 Compose 文件定义了两个服务：```web``` 和 ```redis```。Web 服务：
+>
 > * 根据当前目录中的 ```Dockerfile``` 进行构建。
+>
 > * 暴露容器（container）的5000端口到主机的5000端口
+>
 > * 挂载主机的项目目录到容器（container）中的 ```/code``` 目录，使你不需要重新构建镜像就能修改代码。
+>
 > * 链接 web 服务到 Redis 服务。
 
 > ```redis``` 服务使用从 Docker Hub 下载的最新的 Redis 镜像。
