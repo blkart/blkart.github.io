@@ -104,7 +104,7 @@ PS: 继续翻译使用篇，[原文链接](https://docs.docker.com/compose/getti
 >
 > * 根据当前目录中的 ```Dockerfile``` 进行构建。
 >
-> * 暴露容器（container）的5000端口到主机的5000端口
+> * 暴露容器（container）的5000端口到主机的5000端口。
 >
 > * 挂载主机的项目目录到容器（container）中的 ```/code``` 目录，使你不需要重新构建镜像就能修改代码。
 >
