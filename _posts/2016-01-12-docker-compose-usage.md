@@ -141,7 +141,7 @@ PS: 继续翻译使用篇，[原文链接](https://docs.docker.com/compose/getti
 
 ## 步骤5：尝试下其他命令
 
-如果你想在后端运行你的服务，你可以传递 ```-d``` （detached）给 ```docker-compose up``` 命令，可以使用 ```docker-compose ps``` 查看当前正在运行的服务。
+如果你想在后端运行你的服务，你可以传递 ```-d``` （detached）选项给 ```docker-compose up``` 命令，可以使用 ```docker-compose ps``` 查看当前正在运行的服务。
 
     $ docker-compose up -d
     Starting composetest_redis_1...
@@ -158,7 +158,7 @@ PS: 继续翻译使用篇，[原文链接](https://docs.docker.com/compose/getti
 
 通过 ```docker-compose --help``` 可以查看其它可用的命令。你也可以为 bash 和 zsh shell 安装[命令补全](https://docs.docker.com/compose/completion/)，同样也可以用来查看可用的命令。
 
-如果你使用 ```docker-compose up -d``` 命令启动了你的服务，你也许想要在完成实验是停止它们：
+如果你使用 ```docker-compose up -d``` 命令启动了你的服务，你也许想要在完成实验时停止它们：
 
     $ docker-compose stop
 
