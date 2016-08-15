@@ -34,13 +34,13 @@ PS: 来几个用例，[原文链接](https://docs.docker.com/compose/django/)
     RUN pip install -r requirements.txt
     ADD . /code/
 
-> ```Dockerfile``` 先下载一个 Python 2.7 的基本镜像。然后在这个基本镜像中添加一个新的目录 ```/code```。最后根据 ```requirements.txt``` 文件安装 Python 安装依赖。
+> ```Dockerfile``` 先下载一个 Python 2.7 的基本镜像。然后在这个基本镜像中添加一个新的目录 ```/code```。最后根据 ```requirements.txt``` 文件安装 Python 依赖。
 
 #### 保存文件并退出编辑器
 
 #### 在项目目录中创建一个 ```requirements.txt``` 文件
 
-这个文件会被 ```Dockerfile``` 中的 ```RUN pip install -r requirements.txt``` 命令调用。
+> 这个文件会被 ```Dockerfile``` 中的 ```RUN pip install -r requirements.txt``` 命令调用。
 
 #### 在 ```requirements.txt``` 文件中添加以下内容
 
@@ -53,7 +53,7 @@ PS: 来几个用例，[原文链接](https://docs.docker.com/compose/django/)
 
 ```docker-compose.yml``` 文件描述了创建应用的服务。这个例子中指的是 web 和 数据库服务。Compose 文件同时也描述了这些服务使用哪个 Docker 镜像、它们之间如何链接以及需要将哪些卷挂载到容器（container）中。最后， ```docker-compose.yml``` 文件描述了这些服务暴露了哪些端口。更多关于这个文件如何工作的信息，可以查看 ```docker-compose.yml``` [参考](https://docs.docker.com/compose/compose-file/)。
 
-#### 先加下面的配置到 ```docker-compose.yml``` 中
+#### 先添加下面的配置到 ```docker-compose.yml``` 中
 
     db:
       image: postgres
